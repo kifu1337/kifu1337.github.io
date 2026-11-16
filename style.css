@@ -1,0 +1,123 @@
+body {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 16px;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 960px;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
+/* Галерея, пейджер и подпись по центру свободного места под заголовком */
+.content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Окно, в котором видны только 3 изображения (или 1 на смартфоне) */
+.viewport {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: transform 0.4s ease;
+}
+
+/* Три изображения в ряд: каждое занимает треть ширины */
+.slide {
+    flex: 0 0 33.3333%;
+    box-sizing: border-box;
+    padding: 0 6px;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.arrow {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: #357abd;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    background-color: #2a6099;
+}
+
+.pager {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    border: 2px solid #357abd;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #357abd;
+}
+
+.status {
+    margin: 8px 0 0;
+    text-align: center;
+    color: #555555;
+}
+
+/* Смартфоны: одно изображение на экране */
+@media (max-width: 767px) {
+    .slide {
+        flex-basis: 100%;
+    }
+
+    .arrow {
+        width: 36px;
+        height: 36px;
+    }
+}

@@ -1,0 +1,30 @@
+/* Дополнительные кастомные стили поверх фреймворка Bootstrap */
+
+body {
+    background-color: #f4f4f9;
+}
+
+/* Настройки размера логотипа */
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .logo-img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Оформление ссылок в шапке и подвале */
+#main-nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Задание фонового цвета заголовка таблицы под Bootstrap */
+.table-primary {
+    --bs-table-bg: #357abd;
+    --bs-table-color: #ffffff;
+}

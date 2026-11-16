@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/*На мобильных устройствах блоки занимают 100% ширины экрана*/
+#main-header, 
+#main-nav, 
+#main-content, 
+#main-footer {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    padding: 15px;
+}
+
+/*НАВИГАЦИЯ (Вертикальный список на смартфонах)*/
+#main-nav {
+    background-color: #357abd;
+}
+
+#main-nav .container {
+    display: flex;
+    flex-direction: column; /* Вертикальное меню */
+    align-items: stretch;
+    padding: 10px 15px;
+}
+
+#main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+#main-nav a:last-child {
+    border-bottom: none;
+}
+
+/*ШАПКА*/
+#main-header {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 20px;
+}
+
+/*ОСНОВНОЙ КОНТЕНТ И FLEXBOX ORDER*/
+#main-content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#table {
+    order: 1; 
+}
+
+#links {
+    order: 2;
+}
+
+#form {
+    order: 3;
+}
+
+.content-section {
+    margin-bottom: 25px;
+}
+
+/*ТАБЛИЦА*/
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /*Горизонтальная прокрутка таблицы на узких экранах*/
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.data-table th, 
+.data-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.data-table th {
+    background-color: #357abd;
+    color: white;
+}
+
+/*Чередование цвета строк*/
+.data-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/*ФОРМА*/
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+    width: 100%; /*Поля во всю ширину на смартфонах*/
+    max-width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.inline-label {
+    display: inline !important;
+    font-weight: normal !important;
+}
+
+/*ПОДВАЛ*/
+#main-footer {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+}
+
+
+@media (min-width: 768px) {
+    /*Ограничение ширины до 960px и центрирование*/
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 15px 20px;
+    }
+
+    /*Навигация становится горизонтальной*/
+    #main-nav .container {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    #main-nav a {
+        padding: 0;
+        border-bottom: none;
+    }
+
+    #main-nav a:hover {
+        text-decoration: underline;
+    }
+
+    /*Шапка*/
+    .header-brand {
+        justify-content: flex-start;
+    }
+
+    .logo-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .site-title {
+        font-size: 24px;
+    }
+
+    /*Возвращаем исходный порядок для больших экранов*/
+    #links {
+        order: 1; /*Список ссылок идет первым /
+    }
+
+    #table {
+        order: 2; /*Таблица идет второй*/
+    }
+
+    #form {
+        order: 3; /*Форма третьей*/
+    }
+
+    #main-content {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /*Ограничение ширины инпутов*/
+    .form-group input[type="text"],
+    .form-group input[type="tel"],
+    .form-group input[type="email"],
+    .form-group input[type="date"],
+    .form-group textarea,
+    .form-group select {
+        width: 300px;
+    }
+
+    #main-footer {
+        text-align: left;
+    }
+}

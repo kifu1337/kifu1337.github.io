@@ -175,7 +175,17 @@ body {
         padding: 15px 20px;
     }
 
-    /*Навигация становится горизонтальной*/
+    /*Шапка, меню и подвал на всю ширину экрана*/
+    #main-header .container,
+    #main-nav .container,
+    #main-footer .container {
+        max-width: none;
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /*Навигация становится горизонтальной (ссылки справа)*/
     #main-nav .container {
         flex-direction: row;
         justify-content: flex-end;
@@ -191,7 +201,7 @@ body {
         text-decoration: underline;
     }
 
-    /*Шапка*/
+    /*Шапка (аватарка и название слева)*/
     .header-brand {
         justify-content: flex-start;
     }
@@ -207,7 +217,7 @@ body {
 
     /*Возвращаем исходный порядок для больших экранов*/
     #links {
-        order: 1; /*Список ссылок идет первым /
+        order: 1; /*Список ссылок идет первым*/
     }
 
     #table {

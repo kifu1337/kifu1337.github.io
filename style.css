@@ -22,10 +22,10 @@ body {
     width: 100%;
 }
 
-/*ПОРЯДОК БЛОКОВ НА ТЕЛЕФОНЕ: шапка, контент, меню, подвал*/
+/*ПОРЯДОК БЛОКОВ НА ТЕЛЕФОНЕ: шапка, меню, контент, подвал*/
 #main-header  { order: 1; }
-#main-content { order: 2; }
-#main-nav     { order: 3; }
+#main-content { order: 3; }
+#main-nav     { order: 2; }
 #main-footer  { order: 4; }
 
 .container {

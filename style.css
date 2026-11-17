@@ -9,15 +9,24 @@ body {
     line-height: 1.5;
     background-color: #f4f4f9;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /*На мобильных устройствах блоки занимают 100% ширины экрана*/
-#main-header, 
-#main-nav, 
-#main-content, 
+#main-header,
+#main-nav,
+#main-content,
 #main-footer {
     width: 100%;
 }
+
+/*ПОРЯДОК БЛОКОВ НА ТЕЛЕФОНЕ: шапка, контент, меню, подвал*/
+#main-header  { order: 1; }
+#main-content { order: 2; }
+#main-nav     { order: 3; }
+#main-footer  { order: 4; }
 
 .container {
     width: 100%;
@@ -82,7 +91,7 @@ body {
 }
 
 #table {
-    order: 1; 
+    order: 1;
 }
 
 #links {
@@ -109,7 +118,7 @@ body {
     margin-top: 15px;
 }
 
-.data-table th, 
+.data-table th,
 .data-table td {
     border: 1px solid #ccc;
     padding: 8px;
@@ -183,6 +192,11 @@ body {
         margin: 0;
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    /*На компьютере меню снова сверху*/
+    #main-nav {
+        order: -1;
     }
 
     /*Навигация становится горизонтальной (ссылки справа)*/

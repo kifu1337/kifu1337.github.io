@@ -27,4 +27,10 @@ body {
 .table-primary {
     --bs-table-bg: #357abd;
     --bs-table-color: #ffffff;
+    --bs-table-border-color: #2c64a0;
+}
+
+/* Отступ секций при переходе по якорным ссылкам */
+.content-section {
+    scroll-margin-top: 1rem;
 }
